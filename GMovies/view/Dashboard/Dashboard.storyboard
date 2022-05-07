@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vqZ-bt-n7m">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GMovies-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="dashboardViewController" id="Y6W-OH-hqX" customClass="DashboardViewController" customModule="GMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeW-85-dBQ">
+                                <rect key="frame" x="20" y="808" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dKA-Cp-mfn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select Category"/>
+                                <connections>
+                                    <action selector="selectCategoryPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4Zz-kK-eT7"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="os8-s4-euT">
+                                <rect key="frame" x="20" y="88" width="374" height="704"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-OC-myY">
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="os8-s4-euT" secondAttribute="trailing" constant="20" id="1I7-Ge-BKg"/>
+                            <constraint firstItem="GGF-OC-myY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="D68-uS-OLA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qeW-85-dBQ" secondAttribute="bottom" constant="14" id="I0Q-V2-4Mq"/>
+                            <constraint firstItem="qeW-85-dBQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="TFg-5j-wxt"/>
+                            <constraint firstItem="qeW-85-dBQ" firstAttribute="top" secondItem="os8-s4-euT" secondAttribute="bottom" constant="16" id="gEt-RX-tA6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qeW-85-dBQ" secondAttribute="trailing" constant="20" id="rNs-D4-puy"/>
+                            <constraint firstItem="os8-s4-euT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="t6K-sX-ina"/>
+                            <constraint firstItem="os8-s4-euT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vFp-5H-d11"/>
+                            <constraint firstItem="GGF-OC-myY" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="x5n-OG-O0l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GMovies" id="B8J-5Z-0Y1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart.fill" catalog="system" id="yWk-z9-Net">
+                            <connections>
+                                <action selector="favoritePressed:" destination="Y6W-OH-hqX" id="ic2-l3-UTk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dashboardMoviesTableView" destination="os8-s4-euT" id="YxN-C2-Xwk"/>
+                        <outlet property="spinner" destination="GGF-OC-myY" id="h5m-Yw-0zt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="120.53571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xI9-4x-Ey2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqZ-bt-n7m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Rh-65-byj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="xIg-bf-t1a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOy-Lu-Er4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
