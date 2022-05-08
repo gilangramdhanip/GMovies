@@ -11,7 +11,8 @@ class FavoriteViewController: ViewController {
 
     @IBOutlet weak var favroiteTableView: UITableView!
     var favoriteList = [Movies]()
-
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         favroiteTableView.register(ListTableViewCell.nib(), forCellReuseIdentifier: ListTableViewCell.identifier )
@@ -25,10 +26,20 @@ class FavoriteViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchFavData()
+        showEmpty()
     }
     func fetchFavData() {
         favoriteList = PersitanceManager.shared.fetchFavoriteMovie()
         self.favroiteTableView.reloadData()
+    }
+    
+    func showEmpty(){
+        if favoriteList.count == 0 {
+            emptyLabel.text = "Favorite is empty"
+            emptyLabel.isHidden = false
+        }else{
+            emptyLabel.isHidden = true
+        }
     }
 
 }
@@ -36,6 +47,7 @@ class FavoriteViewController: ViewController {
 
 extension FavoriteViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return favoriteList.count
     }
 

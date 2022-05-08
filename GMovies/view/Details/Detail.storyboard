@@ -101,6 +101,13 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NnW-po-Mf2">
                                 <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oPE-yh-TEg">
+                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjc-jo-ARE">
                                 <rect key="frame" x="186" y="215.33333333333334" width="212" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -158,6 +165,7 @@
                     <connections>
                         <outlet property="detailNavigation" destination="jhM-EG-5jo" id="ZIX-Lc-uxm"/>
                         <outlet property="detailTableView" destination="9hg-sy-ftK" id="2c3-IC-qcM"/>
+                        <outlet property="emptyLabel" destination="oPE-yh-TEg" id="TAi-AG-pE6"/>
                         <outlet property="favButton" destination="JJW-o2-N1Q" id="y3p-tF-ceF"/>
                         <outlet property="movieImage" destination="8aV-wV-ftz" id="icr-UH-Wbf"/>
                         <outlet property="moviePopularity" destination="VGp-3v-dic" id="fck-aJ-zS1"/>

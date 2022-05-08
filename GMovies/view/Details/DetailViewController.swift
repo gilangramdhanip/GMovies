@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var detailNavigation: UINavigationItem!
     @IBOutlet weak var segmentedIndex: UISegmentedControl!
     @IBOutlet weak var movieTitle: UILabel!
@@ -46,7 +47,6 @@ class DetailViewController: UIViewController {
         favMovies = PersitanceManager.shared.fetchFavoriteMovie()
         if listForm == "Dashboard" {
             moviesID = Int64(moviesData!.id)
-            
         }
             spinner.startAnimating()
             spinner.hidesWhenStopped = false
@@ -160,8 +160,15 @@ class DetailViewController: UIViewController {
 extension DetailViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentSelected == 0 {
+            self.emptyLabel.isHidden = true
             return 1
         }else {
+            if reviewViewModel.numberOfRowsInSection(section: section) != 0 {
+                self.emptyLabel.isHidden = true
+            }else{
+                self.emptyLabel.isHidden = false
+                self.emptyLabel.text = "No Reviews"
+            }
             return reviewViewModel.numberOfRowsInSection(section: section)
         }
     }

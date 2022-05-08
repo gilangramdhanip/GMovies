@@ -20,6 +20,13 @@
                                 <rect key="frame" x="20" y="140" width="374" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fbz-Sd-5Su">
+                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -32,6 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favorite" id="3EF-mP-lRX"/>
                     <connections>
+                        <outlet property="emptyLabel" destination="fbz-Sd-5Su" id="HGx-Jq-ikt"/>
                         <outlet property="favroiteTableView" destination="xWX-ZE-2ON" id="pOD-1t-RnZ"/>
                     </connections>
                 </viewController>
