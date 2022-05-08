@@ -68,7 +68,7 @@ class DetailViewController: UIViewController {
                 self.spinner.hidesWhenStopped = true
                 self.detailNavigation.title = data.title
                 self.movieTitle.text = data.title
-            self.movieStatus.text = data.status
+                self.movieStatus.text = data.status
             
             let date = self.convertDateFormat(inputDate: data.releaseDate)
             self.movieReleaseDate.text = "\(date)"
@@ -132,9 +132,9 @@ class DetailViewController: UIViewController {
             } else {
                 favPressed = false
                 favButton.image = UIImage(systemName: "heart.fill")
-                PersitanceManager.shared.favoriteMovies(movie: moviesData!, isFavorite: true)
-                showToast(controller: self, message: "Added favorite movie", seconds: 1.0, navigationController : navigationController!)
-            }
+                        PersitanceManager.shared.favoriteMovies(movie: moviesData!, isFavorite: true)
+                        showToast(controller: self, message: "Added favorite movie", seconds: 1.0, navigationController : navigationController!)
+                }
         
 
     }

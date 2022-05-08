@@ -75,7 +75,7 @@ class APIService {
     
     
     func getReviewsData(idMovie: Int, completion : @escaping (Result<MoviesReviewsModel, Error>) -> Void) {
-        let reviewUrl = "https://api.themoviedb.org/3/movie/\(idMovie)/reviews?api_key=8908a1d59ebed18e66c34b99f01d57fc&language=en-US&page=1"
+        let reviewUrl = "\(url)\(idMovie)/reviews?api_key=\(apiKey)"
         guard let url = URL(string: reviewUrl) else {return }
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {

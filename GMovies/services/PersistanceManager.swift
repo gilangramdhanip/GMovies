@@ -48,7 +48,6 @@ class PersitanceManager {
     
     func fetchFavoriteMovie() -> [Movies] {
         let  request : NSFetchRequest<Movies> = Movies.fetchRequest()
-//        request.sortDescriptors = [NSSortDescriptor(key: "rating", ascending: true)]
         
         var movies : [Movies] = []
         
